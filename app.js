@@ -4,13 +4,13 @@ window.addEventListener('load',()=>
     let lat;
     let temperatureDescription=document.querySelector('.temperature-description');
     let temperatureDegree=document.querySelector('.temperature-description');
-    let locationTimeZone=documennt.querySelector('.location-timezone')
+    //let locationTimeZone=documennt.querySelector('.location-timezone')
 
     if (navigator.geolocation)
     {
         navigator.geolocation.getCurrentPosition(position=>{
             long=position.coords.longitude;
-            lat=postion.coords.latitude;
+            lat=position.coords.latitude;
             
             const proxy='https://cors-anywhere.heroku.com/'
             const api=`${proxy}https://api.darksky.net/forecast/c23b7e07bc7a9bbe0f187be1473a5105/${lat},${long}`;
