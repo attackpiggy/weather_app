@@ -4,6 +4,7 @@ window.addEventListener('load',()=>
     let lat;
     let temperatureDescription=document.querySelector('.temperature-description');
     let temperatureDegree=document.querySelector('.temperature-description');
+    let locationTimeZone=documennt.querySelector('.location-timezone')
 
     if (navigator.geolocation)
     {
@@ -20,7 +21,7 @@ window.addEventListener('load',()=>
             .then(data=>{
                 console.log(data);
                 const{temperature,summary}=data.currently;
-
+                temperatureDegree.textContent=temperature;
             });
         // else{
         //     h1.textContent="hey this is not working, reload the page and allow the popup to so that it can find the location properly"
